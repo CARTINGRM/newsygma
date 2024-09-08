@@ -46,7 +46,11 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        roundPanel1.setBackground(new java.awt.Color(25, 25, 25));
+        roundPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        header2.setBackground(new java.awt.Color(0, 102, 120));
+
+        menu1.setBackground(new java.awt.Color(0, 102, 120));
 
         body.setOpaque(false);
         body.setLayout(new java.awt.BorderLayout());
