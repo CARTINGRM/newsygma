@@ -3,8 +3,12 @@ package com.raven.main;
 import com.raven.event.EventMenu;
 import com.raven.form.Form;
 import com.raven.form.Form_1;
+import com.raven.form.Form_2;
+import com.raven.form.Form_3;
+import com.raven.form.Form_4;
 import java.awt.Color;
 import java.awt.Component;
+import java.util.EventListener;
 
 public class Main extends javax.swing.JFrame {
 
@@ -16,16 +20,28 @@ public class Main extends javax.swing.JFrame {
             public void selected(int index) {
                 if (index == 0) {
                     showForm(new Form_1());
-                } else if (index == 8) {
-                    System.out.println("Logout");
+                } else if (index == 1) {
+                     showForm(new Form_2());
+                } else if (index == 2) {
+                     showForm(new Form_3());
+                 } else if (index == 3) {
+                     showForm(new Form_4());
                 } else {
-                    showForm(new Form(index));
+                    
                 }
             }
-        };
-        menu1.initMenu(event);
-        showForm(new Form_1());
-    }
+           public void onMenuSelected(EventListener listener) {
+            // You need to implement this method
+            // You can leave it empty if you don't need to do anything when a menu is selected
+        }
+    };
+    menu1.initMenu(event);
+    showForm(new Form_1());
+} 
+//        };
+//        menu1.initMenu(event);
+//        showForm(new Form_1());
+//    }
 
     private void showForm(Component com) {
         body.removeAll();
@@ -59,13 +75,13 @@ public class Main extends javax.swing.JFrame {
         roundPanel1.setLayout(roundPanel1Layout);
         roundPanel1Layout.setHorizontalGroup(
             roundPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(header2, javax.swing.GroupLayout.DEFAULT_SIZE, 1371, Short.MAX_VALUE)
+            .addComponent(header2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(roundPanel1Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(10, 10, 10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, 882, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         roundPanel1Layout.setVerticalGroup(
             roundPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -82,7 +98,9 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(roundPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(roundPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
